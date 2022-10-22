@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #EEF9BF;
+    margin-bottom: 40px;
+}
+
+#counter-div {
+    display: none;
+    position: absolute;
+    background-color: #202020;
+    padding: 16px;
+    right: 0px;
+    top: 0px;
+    border-bottom-left-radius: 14px;
+}
+
+#counter {
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #75B79E;
+}
+
+#title-div {
+    display: none;
+    margin: 40px 9% 0px 9%;
+    text-align: center;
+}
+
+#title {
+    font-weight: 700;
+    font-size: 56px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    color: #75B79E;
+}
+
+.fadeIn {
+    opacity: 1;
+    -moz-animation: fadeIn 0.6s linear;
+    -webkit-animation: fadeIn 0.6s linear;
+    -o-animation: fadeIn 0.6s linear;
+    animation: fadeIn 0.6s linear;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#cards-div {
+    margin: 20px 9% 0px 9%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #A7E9AF;
+    min-width: 117px;
+    max-width: 117px;
+    min-height: 146px;
+    max-height: 146px;
+    border-radius: 5px;
+    border: 1px solid #99CEA8;
+    display: flex;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(0deg);
+    margin-top: 30px;
+    margin-right: 3%;
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+}
+
+.animImg {
+    width: 70px !important;
+    height: 70px !important;
+}
+
+.animCard {
+    -moz-animation: animCard 0.5s linear;
+    -webkit-animation: animCard 0.5s linear;
+    -o-animation: animCard 0.5s linear;
+    animation: animCard 0.5s linear;
+}
+
+@keyframes animCard {
+    from {
+        opacity: 0;
+        scale: 1.4;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@-o-keyframes animCard {
+    from {
+        opacity: 0;
+        scale: 1.4;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@-moz-keyframes animCard {
+    from {
+        opacity: 0;
+        scale: 1.4;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@-webkit-keyframes animCard {
+    from {
+        opacity: 0;
+        scale: 1.4;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.flip {
+    -moz-animation: flipOrUnflip 0.8s linear;
+    -webkit-animation: flipOrUnflip 0.8s linear;
+    -o-animation: flipOrUnflip 0.8s linear;
+    animation: flipOrUnflip 0.8s linear;
+}
+
+.unflip {
+    -moz-animation: flipOrUnflip 0.8s linear reverse;
+    -webkit-animation: flipOrUnflip 0.8s linear reverse;
+    -o-animation: flipOrUnflip 0.8s linear reverse;
+    animation: flipOrUnflip 0.8s linear reverse;
+}
+
+@keyframes flipOrUnflip {
+    0% {
+        scale: 1;
+        transform: rotateY(0deg);
+    }
+    50% {
+        scale: 1.2;
+        transform: rotateY(90deg);
+    }
+    100% {
+        scale: 1;
+        transform: rotateY(180deg);
+    }
+}
+
+@-o-keyframes flipOrUnflip {
+    0% {
+        scale: 1;
+        transform: rotateY(0deg);
+    }
+    50% {
+        scale: 1.2;
+        transform: rotateY(90deg);
+    }
+    100% {
+        scale: 1;
+        transform: rotateY(180deg);
+    }
+}
+
+@-moz-keyframes flipOrUnflip {
+    0% {
+        scale: 1;
+        transform: rotateY(0deg);
+    }
+    50% {
+        scale: 1.2;
+        transform: rotateY(90deg);
+    }
+    100% {
+        scale: 1;
+        transform: rotateY(180deg);
+    }
+}
+
+@-webkit-keyframes flipOrUnflip {
+    0% {
+        scale: 1;
+        transform: rotateY(0deg);
+    }
+    50% {
+        scale: 1.2;
+        transform: rotateY(90deg);
+    }
+    100% {
+        scale: 1;
+        transform: rotateY(180deg);
+    }
+}
+
+#restart-div {
+    text-align: center;
+    margin-top: 60px;
+    display: none;
+}
+
+#restart {
+    background-color: #75B79E;
+    color: #202020;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    padding: 24px 30px;
+    border: none;
+    border-radius: 20px;
+}
