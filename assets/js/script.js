@@ -70,7 +70,7 @@ function preloadImages() {
     return new Promise(resolve => {
         for (let i = 0; i < availableImages.length; i++) {
             let image = new Image();
-            image.src = window.location + imageDir + availableImages[i];
+            image.src = window.location.origin + window.location.pathname + imageDir + availableImages[i];
             delete(image);
         }
         resolve();
@@ -118,7 +118,7 @@ async function arrangeCards() {
         cardsDiv.children[i].classList.add("flip");
         setTimeout(function() {
             cardsDiv.children[i].getElementsByTagName("img")[0].classList.add("animImg");
-            cardsDiv.children[i].getElementsByTagName("img")[0].src = window.location + imageDir + pairs[i];
+            cardsDiv.children[i].getElementsByTagName("img")[0].src = window.location.origin + window.location.pathname + imageDir + pairs[i];
         }, 400);
     }
     await sleep(1000);
@@ -131,7 +131,7 @@ async function arrangeCards() {
         cardsDiv.children[i].classList.add("unflip");
         setTimeout(function() {
             cardsDiv.children[i].getElementsByTagName("img")[0].classList.remove("animImg");
-            cardsDiv.children[i].getElementsByTagName("img")[0].src = window.location + imageDir + birdImage;
+            cardsDiv.children[i].getElementsByTagName("img")[0].src = window.location.origin + window.location.pathname + imageDir + birdImage;
         }, 400);
     }
     await sleep(1000);
@@ -171,7 +171,7 @@ function hoverCard(element) {
                     let indexOf = Array.prototype.indexOf.call(parent.children, element);
                     setTimeout(function () {
                         element.getElementsByTagName("img")[0].classList.add("animImg");
-                        element.getElementsByTagName("img")[0].src = window.location + imageDir + pairs[indexOf];
+                        element.getElementsByTagName("img")[0].src = window.location.origin + window.location.pathname + imageDir + pairs[indexOf];
                     }, 400);
                     flippedCards.push(element);
                     clicksCount++;
@@ -203,8 +203,8 @@ function hoverCard(element) {
                         setTimeout(function() {
                             cardsFlipped[0].getElementsByTagName("img")[0].classList.remove("animImg");
                             cardsFlipped[1].getElementsByTagName("img")[0].classList.remove("animImg");
-                            cardsFlipped[0].getElementsByTagName("img")[0].src = window.location + imageDir + birdImage;
-                            cardsFlipped[1].getElementsByTagName("img")[0].src = window.location + imageDir + birdImage;
+                            cardsFlipped[0].getElementsByTagName("img")[0].src = window.location.origin + window.location.pathname + imageDir + birdImage;
+                            cardsFlipped[1].getElementsByTagName("img")[0].src = window.location.origin + window.location.pathname + imageDir + birdImage;
                             setTimeout(function() {
                                 cardsFlipped[0].classList.remove("unflip");
                                 cardsFlipped[1].classList.remove("unflip");
