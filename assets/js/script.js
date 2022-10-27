@@ -70,7 +70,7 @@ function preloadImages() {
     return new Promise(resolve => {
         for (let i = 0; i < availableImages.length; i++) {
             let image = new Image();
-            image.src = window.location.origin + window.location.pathname + imageDir + availableImages[i];
+            image.src = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + "/" + imageDir + availableImages[i];
             delete(image);
         }
         resolve();
@@ -118,7 +118,7 @@ async function arrangeCards() {
         cardsDiv.children[i].classList.add("flip");
         setTimeout(function() {
             cardsDiv.children[i].getElementsByTagName("img")[0].classList.add("animImg");
-            cardsDiv.children[i].getElementsByTagName("img")[0].src = window.location.origin + window.location.pathname + imageDir + pairs[i];
+            cardsDiv.children[i].getElementsByTagName("img")[0].src = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + "/" + imageDir + pairs[i];
         }, 400);
     }
     await sleep(1000);
@@ -131,7 +131,7 @@ async function arrangeCards() {
         cardsDiv.children[i].classList.add("unflip");
         setTimeout(function() {
             cardsDiv.children[i].getElementsByTagName("img")[0].classList.remove("animImg");
-            cardsDiv.children[i].getElementsByTagName("img")[0].src = window.location.origin + window.location.pathname + imageDir + birdImage;
+            cardsDiv.children[i].getElementsByTagName("img")[0].src = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + "/" + imageDir + birdImage;
         }, 400);
     }
     await sleep(1000);
